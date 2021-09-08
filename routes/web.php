@@ -27,3 +27,7 @@ Route::get('/side', function () {
     return view('sidebar');
 });
 
+Route::get('/serch' function() {
+    return view('serch');
+}
+

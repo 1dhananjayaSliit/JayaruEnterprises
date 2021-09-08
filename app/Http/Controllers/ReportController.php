@@ -103,7 +103,7 @@ class ReportController extends Controller
         $report->update($request->all());
 
 
-        return redirect()->route('$reports.index')
+        return redirect()->route('reports.index')
 
             ->with('success','Report updated successfully');
 
@@ -120,7 +120,7 @@ class ReportController extends Controller
         $report->delete();
 
 
-        return redirect()->route('$reports.index')
+        return redirect()->route('reports.index')
 
             ->with('success','Report deleted successfully');
     }
