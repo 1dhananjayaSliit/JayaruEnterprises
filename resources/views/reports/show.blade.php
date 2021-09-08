@@ -52,7 +52,7 @@
 
             <div class="form-group">
 
-                <strong>Item N:</strong>
+                <strong>Item No:</strong>
 
                 {{ $report->itemNo }}
 
