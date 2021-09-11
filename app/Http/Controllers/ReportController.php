@@ -31,6 +31,17 @@ class ReportController extends Controller
         return view('reports.create');
     }
 
+    public function autocomplete(Request $request)
+    {
+        $data =
+            Report::where('billNo','LIKE','%{$request->query}%')
+                ->orwhere('itemNo','LIKE','%{$request->query}%')
+                ->get();
+
+        return response()->json($data);
+
+    }
+
     /**
      * Store a newly created resource in storage.
      *

@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 {{--    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/css/bootstrap.css" rel="stylesheet">--}}
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.1/bootstrap3-typeahead.min.js"></script>
 
 {{--    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">--}}
 
@@ -49,12 +50,7 @@
 </head>
 <body>
 
-
-
 <main>
-
-
-
 
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light bg-light rounded" aria-label="Eleventh navbar example">
@@ -85,16 +81,40 @@
                         </li>
                     </ul>
                     <form>
-                        <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+                        <input class="typeahead form-control" type="text" id="search" name="search" placeholder="Search" aria-label="Search">
                     </form>
                 </div>
             </div>
         </nav>
 
 
+{{------------------------------------------------------------------------------------------------------------------------------------------------------------------}}
 
 
+        <script type="text/javascript">
 
+            var path = "{{ action('ReportController@autocomplete') }}";
+
+            {{--var path = "{{ ['action' => 'App\Http\Controllers\ReportController@autocomplete'] }}";--}}
+
+            $('input.typeahead').typeahead({
+
+                source:  function (query, process) {
+
+                    return $.get(path, { query: query }, function (data) {
+
+                        return process(data);
+
+                    });
+
+                }
+
+            });
+
+        </script>
+
+
+{{------------------------------------------------------------------------------------------------------------------------------------------------------------------}}
 
 
 <div class="container">
@@ -102,5 +122,7 @@
     @yield('content')
 
 </div>
+
+</main>
 </body>
 </html>

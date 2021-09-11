@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\ReportController;
@@ -27,7 +28,15 @@ Route::get('/side', function () {
     return view('sidebar');
 });
 
-Route::get('/serch' function() {
-    return view('serch');
-}
+
+//Route::get('search', [SearchController::class, 'index'])->name('search');
+
+//Route::get('/autocomplete', [ReportController::class, 'autocomplete'])->name('autocomplete');
+
+
+    Route::get('/autocomplete', 'ReportController@autocomplete');
+
+
+//Route::get('products/frontend', [ProductController::class, 'frontend']);
+//Route::get('products/backend', [ProductController::class, 'backend']);
 
