@@ -1,13 +1,3 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
 @extends('reports.layout')
 
 
@@ -25,7 +15,7 @@
 
             <div class="pull-right">
 
-                <a class="btn btn-primary" href="{{ route('report.index') }}"> Back</a>
+                <a class="btn btn-primary" href="{{ route('reports.index') }}"> Back</a>
 
             </div>
 
@@ -52,7 +42,7 @@
 
             <div class="form-group">
 
-                <strong>Item N:</strong>
+                <strong>Item No:</strong>
 
                 {{ $report->itemNo }}
 
@@ -75,5 +65,3 @@
     </div>
 
 @endsection
-</body>
-</html>

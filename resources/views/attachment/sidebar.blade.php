@@ -11,7 +11,7 @@
     <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/sidebars/">
 
     <!-- Bootstrap core CSS -->
-    <link href="../css/dist/bootstrap.min.css" rel="stylesheet">
+    <link href="../../css/dist/bootstrap.min.css" rel="stylesheet">
     <title></title>
 </head>
 <body>
@@ -76,9 +76,9 @@
 
     <div class="b-example-divider"></div>
 
-    <script src="../js/dist/bootstrap.bundle.min.js"></script>
+    <script src="../../js/dist/bootstrap.bundle.min.js"></script>
 
-    <script src="../js/dist/sidebars.js"></script>
+    <script src="../../js/dist/sidebars.js"></script>
 
 
 </body>
